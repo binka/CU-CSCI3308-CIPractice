@@ -36,6 +36,18 @@ double coord_2d_dist(const coord_2d_t* a, const coord_2d_t* b){
 
 }
 
+double coord_2d_area_triangle(const coord_2d_t* a, const coord_2d_t* b, const coord_2d_t* c){
+    double Area = 0;
+    double Ax = a->x;
+    double Ay = a->y;
+    double Bx = b->x;
+    double By = b->y;
+    double Cx = c->x;
+    double Cy = c->y;
+    Area = ((Ax * (By - Cy) + Bx * (Cy - Ay) + Cx * (Ay - By)) / 2 );
+    return Area;
+}
+
 bool coord_2d_eq(const coord_2d_t* a, const coord_2d_t* b){
 
     /* Equal if dist <= FUZZY_EQ */
